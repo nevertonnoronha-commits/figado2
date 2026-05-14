@@ -1,26 +1,32 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { globalStyles } from './styles/globalStyles';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
 import { HeroSection } from './components/sections/HeroSection';
-import { PainPointsSection } from './components/sections/PainPointsSection';
-import { TransformationSection } from './components/sections/TransformationSection';
-import { MechanismSection } from './components/sections/MechanismSection';
-import { ExpertSection } from './components/sections/ExpertSection';
-import { BenefitsSection } from './components/sections/BenefitsSection';
-import { DetailedContentSection } from './components/sections/DetailedContentSection';
-import { BonusesSection } from './components/sections/BonusesSection';
-import { OfferPricingSection } from './components/sections/OfferPricingSection';
-import { GuaranteeSection } from './components/sections/GuaranteeSection';
-import { SocialProofSection } from './components/sections/SocialProofSection';
-import { AccessDeliverySection } from './components/sections/AccessDeliverySection';
-import { FAQSection } from './components/sections/FAQSection';
-import { FinalCTASection } from './components/sections/FinalCTASection';
-import { Footer } from './components/layout/Footer';
-import { SocialProofPopup } from './components/features/SocialProofPopup';
-import { AIChatWidget } from './components/features/AIChatWidget';
+
+// Implementando Code Splitting / Lazy Loading para seções abaixo da dobra principal (Alívio de TTI)
+const lazyNamed = (importFunc, name) => React.lazy(() => 
+  importFunc().then(module => ({ default: module[name] }))
+);
+
+const PainPointsSection = lazyNamed(() => import('./components/sections/PainPointsSection'), 'PainPointsSection');
+const TransformationSection = lazyNamed(() => import('./components/sections/TransformationSection'), 'TransformationSection');
+const MechanismSection = lazyNamed(() => import('./components/sections/MechanismSection'), 'MechanismSection');
+const ExpertSection = lazyNamed(() => import('./components/sections/ExpertSection'), 'ExpertSection');
+const BenefitsSection = lazyNamed(() => import('./components/sections/BenefitsSection'), 'BenefitsSection');
+const DetailedContentSection = lazyNamed(() => import('./components/sections/DetailedContentSection'), 'DetailedContentSection');
+const BonusesSection = lazyNamed(() => import('./components/sections/BonusesSection'), 'BonusesSection');
+const OfferPricingSection = lazyNamed(() => import('./components/sections/OfferPricingSection'), 'OfferPricingSection');
+const GuaranteeSection = lazyNamed(() => import('./components/sections/GuaranteeSection'), 'GuaranteeSection');
+const SocialProofSection = lazyNamed(() => import('./components/sections/SocialProofSection'), 'SocialProofSection');
+const AccessDeliverySection = lazyNamed(() => import('./components/sections/AccessDeliverySection'), 'AccessDeliverySection');
+const FAQSection = lazyNamed(() => import('./components/sections/FAQSection'), 'FAQSection');
+const FinalCTASection = lazyNamed(() => import('./components/sections/FinalCTASection'), 'FinalCTASection');
+const Footer = lazyNamed(() => import('./components/layout/Footer'), 'Footer');
+const SocialProofPopup = lazyNamed(() => import('./components/features/SocialProofPopup'), 'SocialProofPopup');
+const AIChatWidget = lazyNamed(() => import('./components/features/AIChatWidget'), 'AIChatWidget');
 
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({ h: 1, m: 32, s: 31 });
@@ -148,39 +154,43 @@ export default function App() {
 
   return (
     <div className="relative selection:bg-[#e2b764] selection:text-[#04100b]">
-      <style>{globalStyles}</style>
       <div id="scroll-progress" style={{ width: scrollProgress }}></div>
 
+      {/* Componentes da Dobra Principal com Carregamento Eager/Imediato */}
       <StickyUrgencyBar timeLeft={timeLeft} />
       <HeroSection />
       <MarqueeBanner />
-      <PainPointsSection />
-      <TransformationSection />
-      <MechanismSection />
-      <ExpertSection />
-      <BenefitsSection />
-      <DetailedContentSection />
-      <BonusesSection />
-      <OfferPricingSection />
-      <GuaranteeSection />
-      <SocialProofSection />
-      <AccessDeliverySection />
-      <FAQSection />
-      <FinalCTASection />
-      <Footer />
 
-      <SocialProofPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+      {/* Componentes abaixo da dobra sob demanda (Suspense / Code Splitting) */}
+      <Suspense fallback={<div className="h-10" />}>
+        <PainPointsSection />
+        <TransformationSection />
+        <MechanismSection />
+        <ExpertSection />
+        <BenefitsSection />
+        <DetailedContentSection />
+        <BonusesSection />
+        <OfferPricingSection />
+        <GuaranteeSection />
+        <SocialProofSection />
+        <AccessDeliverySection />
+        <FAQSection />
+        <FinalCTASection />
+        <Footer />
 
-      <AIChatWidget
-        isChatOpen={isChatOpen}
-        setIsChatOpen={setIsChatOpen}
-        chatMessages={chatMessages}
-        chatInput={chatInput}
-        setChatInput={setChatInput}
-        isChatLoading={isChatLoading}
-        chatEndRef={chatEndRef}
-        handleSendChat={handleSendChat}
-      />
+        <SocialProofPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+
+        <AIChatWidget
+          isChatOpen={isChatOpen}
+          setIsChatOpen={setIsChatOpen}
+          chatMessages={chatMessages}
+          chatInput={chatInput}
+          setChatInput={setChatInput}
+          isChatLoading={isChatLoading}
+          chatEndRef={chatEndRef}
+          handleSendChat={handleSendChat}
+        />
+      </Suspense>
       <SpeedInsights />
     </div>
   );
