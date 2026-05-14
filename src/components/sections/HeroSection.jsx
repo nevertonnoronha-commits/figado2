@@ -6,9 +6,9 @@ export const HeroSection = () => (
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0f3b23] via-[#061a11] to-[#04100b] pt-10 pb-20">
         <div className="noise-bg"></div>
 
-        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-[#1a5c36] rounded-full mix-blend-screen filter blur-[100px] orb-1 opacity-60"></div>
-        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-[#0c2e1b] rounded-full mix-blend-screen filter blur-[120px] orb-2 opacity-80"></div>
-        <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] bg-[#e2b764] rounded-full mix-blend-overlay filter blur-[150px] orb-3 opacity-30"></div>
+        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-[#1a5c36] rounded-full mix-blend-screen filter blur-[50px] orb-1 opacity-60"></div>
+        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-[#0c2e1b] rounded-full mix-blend-screen filter blur-[60px] orb-2 opacity-80"></div>
+        <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] bg-[#e2b764] rounded-full mix-blend-overlay filter blur-[80px] orb-3 opacity-30"></div>
 
         <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
             <ScrollReveal delay={100} critical={true}>
@@ -54,11 +54,11 @@ export const HeroSection = () => (
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-white/80 font-medium max-w-xl mx-auto bg-black/20 backdrop-blur-md px-6 py-3.5 rounded-full border border-white/10 shadow-2xl">
                     <div className="flex items-center gap-3">
                         <div className="flex -space-x-2.5 overflow-hidden">
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=1" alt="Paciente verificada" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=5" alt="Paciente verificada" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=9" alt="Paciente verificada" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=12" alt="Paciente verificada" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=32" alt="Paciente verificada" />
+                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=1" alt="Paciente verificada" loading="lazy" decoding="async" />
+                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=5" alt="Paciente verificada" loading="lazy" decoding="async" />
+                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=9" alt="Paciente verificada" loading="lazy" decoding="async" />
+                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=12" alt="Paciente verificada" loading="lazy" decoding="async" />
+                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=32" alt="Paciente verificada" loading="lazy" decoding="async" />
                         </div>
                         <div className="text-left leading-tight">
                             <div className="flex items-center gap-0.5 text-[#e2b764]">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { globalStyles } from './styles/globalStyles';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
@@ -27,6 +26,7 @@ const FinalCTASection = lazyNamed(() => import('./components/sections/FinalCTASe
 const Footer = lazyNamed(() => import('./components/layout/Footer'), 'Footer');
 const SocialProofPopup = lazyNamed(() => import('./components/features/SocialProofPopup'), 'SocialProofPopup');
 const AIChatWidget = lazyNamed(() => import('./components/features/AIChatWidget'), 'AIChatWidget');
+const SpeedInsights = lazyNamed(() => import('@vercel/speed-insights/react'), 'SpeedInsights');
 
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({ h: 1, m: 32, s: 31 });
@@ -190,8 +190,8 @@ export default function App() {
           chatEndRef={chatEndRef}
           handleSendChat={handleSendChat}
         />
+        <SpeedInsights />
       </Suspense>
-      <SpeedInsights />
     </div>
   );
 }
