@@ -1,6 +1,4 @@
 export const globalStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
   :root {
     --bg-dark: #04100b;
     --bg-emerald: #0a2517;
