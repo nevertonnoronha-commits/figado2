@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { globalStyles } from './styles/globalStyles';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
@@ -180,6 +181,7 @@ export default function App() {
         chatEndRef={chatEndRef}
         handleSendChat={handleSendChat}
       />
+      <SpeedInsights />
     </div>
   );
 }
