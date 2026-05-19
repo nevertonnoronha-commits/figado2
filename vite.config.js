@@ -10,9 +10,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          lucide: ['lucide-react'],
+        manualChunks(id) {
+          if (id.includes('/react/') || id.includes('/react-dom/')) return 'vendor';
+          if (id.includes('/lucide-react/')) return 'lucide';
         },
       },
     },
