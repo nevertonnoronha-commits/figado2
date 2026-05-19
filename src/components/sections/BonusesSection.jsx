@@ -2,9 +2,7 @@ import React from 'react';
 import { Gift, CheckCircle2, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { BonusCard } from '../ui/BonusCard';
-import { trackInitiateCheckout } from '../../utils/analytics';
-
-const HOTMART_URL = 'https://pay.hotmart.com/W105836452N?src=RodYaOoMDvTso6sTyZfNSf4gyR7let1Fd1YZ';
+import { openCheckoutModal } from '../../utils/analytics';
 
 const bonosGratis = [
   {
@@ -100,15 +98,12 @@ export const BonusesSection = () => (
             </p>
           </div>
 
-          <a
-            href={HOTMART_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={trackInitiateCheckout}
-            className="btn-shine block w-full text-center bg-[#e2b764] text-[#04100b] py-5 rounded-lg font-extrabold text-xl md:text-2xl tracking-wide shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b]"
+          <button
+            onClick={openCheckoutModal}
+            className="btn-press btn-shine block w-full text-center bg-[#e2b764] text-[#04100b] py-5 rounded-lg font-extrabold text-xl md:text-2xl tracking-wide shadow-[0_0_30px_rgba(226,183,100,0.3)] hover:bg-[#f3c97b]"
           >
             Quiero Todo Esto Ahora <ArrowRight size={24} className="inline-block ml-2" />
-          </a>
+          </button>
         </div>
       </ScrollReveal>
     </div>

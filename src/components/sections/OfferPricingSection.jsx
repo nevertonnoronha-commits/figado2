@@ -1,9 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Star, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
-import { trackInitiateCheckout } from '../../utils/analytics';
-
-const HOTMART_URL = 'https://pay.hotmart.com/W105836452N?src=RodYaOoMDvTso6sTyZfNSf4gyR7let1Fd1YZ';
+import { openCheckoutModal } from '../../utils/analytics';
 
 export const OfferPricingSection = () => (
   <section id="offer" className="py-32 bg-[#fcfbf9] text-[#04100b] relative">
@@ -37,15 +35,12 @@ export const OfferPricingSection = () => (
             </div>
           </div>
 
-          <a
-            href={HOTMART_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={trackInitiateCheckout}
-            className="btn-shine w-full bg-[#e2b764] text-[#04100b] py-6 md:py-8 rounded-lg font-extrabold text-2xl md:text-3xl tracking-wide flex items-center justify-center gap-4 transition-all hover:bg-[#f3c97b] shadow-[0_0_40px_rgba(226,183,100,0.4)]"
+          <button
+            onClick={openCheckoutModal}
+            className="btn-press btn-shine w-full bg-[#e2b764] text-[#04100b] py-6 md:py-8 rounded-lg font-extrabold text-2xl md:text-3xl tracking-wide flex items-center justify-center gap-4 hover:bg-[#f3c97b] shadow-[0_0_40px_rgba(226,183,100,0.4)]"
           >
             SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={32} />
-          </a>
+          </button>
 
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-white/60 font-medium">
             <div className="flex items-center gap-2">

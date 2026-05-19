@@ -1,6 +1,7 @@
 import React from 'react';
 import { Smartphone, Zap, Activity } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const AccessDeliverySection = () => (
   <section className="py-24 bg-[#04100b] text-white border-t border-white/5">
@@ -32,9 +33,9 @@ export const AccessDeliverySection = () => (
           </div>
         </div>
 
-        <a href="#offer" className="inline-block border border-[#e2b764] text-[#e2b764] px-10 py-4 font-bold tracking-widest uppercase text-sm hover:bg-[#e2b764] hover:text-[#04100b] transition-colors duration-300 rounded">
+        <button onClick={scrollToOffer} className="inline-block border border-[#e2b764] text-[#e2b764] px-10 py-4 font-bold tracking-widest uppercase text-sm hover:bg-[#e2b764] hover:text-[#04100b] transition-colors duration-300 rounded cursor-pointer">
           Acceder Ahora con 85% OFF
-        </a>
+        </button>
       </ScrollReveal>
     </div>
   </section>

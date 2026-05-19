@@ -1,5 +1,6 @@
 import { ShieldCheck, Star, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const HeroSection = () => (
     <section className="relative flex flex-col justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0f3b23] via-[#061a11] to-[#04100b] pt-6 pb-12 sm:pt-10 sm:pb-20">
@@ -40,9 +41,9 @@ export const HeroSection = () => (
             </ScrollReveal>
 
             <ScrollReveal delay={400} className="w-full flex flex-col items-center">
-                <a href="#offer" className="btn-shine bg-[#e2b764] text-[#04100b] px-8 py-5 md:px-12 md:py-6 rounded-none font-bold text-xl md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer">
+                <button onClick={scrollToOffer} className="btn-shine bg-[#e2b764] text-[#04100b] px-8 py-5 md:px-12 md:py-6 rounded-none font-bold text-xl md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer">
                     Quiero mis Recetas <ArrowRight size={24} />
-                </a>
+                </button>
 
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-white/80 font-medium max-w-xl mx-auto bg-black/20 backdrop-blur-md px-6 py-3.5 rounded-full border border-white/10 shadow-2xl">
                     <div className="flex items-center gap-3">

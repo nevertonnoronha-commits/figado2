@@ -33,7 +33,7 @@ export const TransformationSection = () => (
 
           <div className="flex flex-col items-center gap-3 z-10 bg-[#0a2517] p-4 rounded-full border border-[#e2b764]/20 shadow-xl">
             <div className="bg-[#4CAF50] text-[#04100b] w-12 h-12 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(76,175,80,0.4)]">
-              <ArrowRight size={24} />
+              <ArrowRight size={24} className="rotate-90 md:rotate-0" />
             </div>
             <span className="text-[10px] text-[#e2b764] font-bold uppercase tracking-[0.3em] whitespace-nowrap">Con Naturale</span>
           </div>

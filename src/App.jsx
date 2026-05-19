@@ -5,6 +5,7 @@ import { trackViewContent } from './utils/analytics';
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
 import { HeroSection } from './components/sections/HeroSection';
+import { CheckoutModal } from './components/features/CheckoutModal';
 
 // Implementando Code Splitting / Lazy Loading para seções abaixo da dobra principal (Alívio de TTI)
 const lazyNamed = (importFunc, name) => React.lazy(() => 
@@ -196,6 +197,8 @@ export default function App() {
         />
         <SpeedInsights />
       </Suspense>
+
+      <CheckoutModal />
     </div>
   );
 }
