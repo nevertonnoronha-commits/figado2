@@ -3,7 +3,7 @@ import { Sunrise, Utensils, Nut, Moon } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const DetailedContentSection = () => (
-  <section className="py-24 bg-[#fcfbf9] text-[#04100b]">
+  <section className="py-24 bg-[#fcfbf9] text-[#04100b] overflow-hidden">
     <div className="container mx-auto px-6 max-w-4xl">
       <ScrollReveal>
         <div className="text-center mb-20">

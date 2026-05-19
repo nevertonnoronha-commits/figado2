@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --bg-dark: #04100b;
   --bg-emerald: #0a2517;

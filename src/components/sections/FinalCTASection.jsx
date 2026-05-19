@@ -1,6 +1,9 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { trackInitiateCheckout } from '../../utils/analytics';
+
+const HOTMART_URL = 'https://pay.hotmart.com/W105836452N?src=RodYaOoMDvTso6sTyZfNSf4gyR7let1Fd1YZ';
 
 export const FinalCTASection = () => (
     <section className="py-32 relative text-white text-center overflow-hidden flex items-center justify-center">
@@ -27,7 +30,13 @@ export const FinalCTASection = () => (
                     No esperes que el médico te dé malas noticias para actuar. El momento de recuperar tu vida, tu energía y tu paz mental es ahora.
                 </p>
 
-                <a href="#offer" className="btn-shine inline-flex items-center justify-center w-full md:w-3/4 mx-auto bg-[#e2b764] text-[#04100b] px-8 py-6 rounded-lg font-extrabold text-xl md:text-3xl tracking-wide shadow-[0_0_60px_rgba(226,183,100,0.5)] transition-transform hover:scale-[1.02]">
+                <a
+                    href={HOTMART_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={trackInitiateCheckout}
+                    className="btn-shine inline-flex items-center justify-center w-full md:w-3/4 mx-auto bg-[#e2b764] text-[#04100b] px-8 py-6 rounded-lg font-extrabold text-xl md:text-3xl tracking-wide shadow-[0_0_60px_rgba(226,183,100,0.5)] transition-transform hover:scale-[1.02]"
+                >
                     SÍ, QUIERO SANAR MI HÍGADO AHORA <ArrowRight size={28} className="ml-3" />
                 </a>
 

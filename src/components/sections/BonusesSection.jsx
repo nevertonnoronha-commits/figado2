@@ -2,6 +2,9 @@ import React from 'react';
 import { Gift, CheckCircle2, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { BonusCard } from '../ui/BonusCard';
+import { trackInitiateCheckout } from '../../utils/analytics';
+
+const HOTMART_URL = 'https://pay.hotmart.com/W105836452N?src=RodYaOoMDvTso6sTyZfNSf4gyR7let1Fd1YZ';
 
 const bonosGratis = [
   {
@@ -39,7 +42,7 @@ const bonosGratis = [
 ];
 
 export const BonusesSection = () => (
-  <section className="py-24 md:py-32 bg-[#0a2517] text-white border-t border-[#e2b764]/20 relative">
+  <section className="py-24 md:py-32 bg-[#0a2517] text-white border-t border-[#e2b764]/20 relative overflow-hidden">
     <div className="noise-bg opacity-40"></div>
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
       <ScrollReveal>
@@ -97,7 +100,13 @@ export const BonusesSection = () => (
             </p>
           </div>
 
-          <a href="#offer" className="btn-shine block w-full text-center bg-[#e2b764] text-[#04100b] py-5 rounded-lg font-extrabold text-xl md:text-2xl tracking-wide shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b]">
+          <a
+            href={HOTMART_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackInitiateCheckout}
+            className="btn-shine block w-full text-center bg-[#e2b764] text-[#04100b] py-5 rounded-lg font-extrabold text-xl md:text-2xl tracking-wide shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b]"
+          >
             Quiero Todo Esto Ahora <ArrowRight size={24} className="inline-block ml-2" />
           </a>
         </div>

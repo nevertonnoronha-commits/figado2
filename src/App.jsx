@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { globalStyles } from './styles/globalStyles';
+import { trackViewContent } from './utils/analytics';
 
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
@@ -108,6 +109,9 @@ export default function App() {
       setIsChatLoading(false);
     }
   };
+
+  // ViewContent — dispara uma vez quando a página carrega
+  useEffect(() => { trackViewContent(); }, []);
 
   // Timer logic with LocalStorage persistency
   useEffect(() => {
