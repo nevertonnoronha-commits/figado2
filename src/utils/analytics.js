@@ -7,8 +7,12 @@ const PRODUCT = {
 };
 
 const fire = (event, params) => {
-  if (typeof window.fbq !== 'function') return;
-  window.fbq('track', event, params);
+  try {
+    if (typeof window.fbq !== 'function') return;
+    window.fbq('track', event, params);
+  } catch (e) {
+    console.warn('Analytics blocked or failed:', e);
+  }
 };
 
 export const trackViewContent = () => fire('ViewContent', PRODUCT);

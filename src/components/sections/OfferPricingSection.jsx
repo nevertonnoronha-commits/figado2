@@ -4,18 +4,18 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 import { openCheckoutModal } from '../../utils/analytics';
 
 export const OfferPricingSection = () => (
-  <section id="offer" className="py-32 bg-[#fcfbf9] text-[#04100b] relative">
+  <section className="py-32 bg-[#fcfbf9] text-[#04100b] relative">
     <div className="container mx-auto px-6 max-w-4xl text-center">
       <ScrollReveal>
-        <h2 className="font-editorial text-5xl md:text-7xl mb-6 text-[#0a2517]">Tu hígado no puede esperar.</h2>
-        <p className="text-2xl font-light text-[#04100b]/60 mb-16">
+        <h2 className="font-editorial text-4xl md:text-7xl mb-4 md:mb-6 text-[#0a2517]">Tu hígado no puede esperar.</h2>
+        <p className="text-xl md:text-2xl font-light text-[#04100b]/60 mb-10 md:mb-16">
           Hoy es el momento. No lo postergues más.
         </p>
       </ScrollReveal>
 
       <ScrollReveal delay={200}>
-        <div className="relative bg-[#04100b] text-white p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-[#e2b764]/30 transform transition-transform hover:-translate-y-2 rounded-2xl">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e2b764] text-[#04100b] px-8 py-2 font-black uppercase tracking-widest text-sm shadow-xl rounded-full whitespace-nowrap">
+        <div className="relative bg-[#04100b] text-white p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-[#e2b764]/30 transform transition-transform hover:-translate-y-2 rounded-2xl">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#e2b764] text-[#04100b] px-6 md:px-8 py-2 font-black uppercase tracking-widest text-xs md:text-sm shadow-xl rounded-full whitespace-nowrap">
             🔥 OFERTA: 85% OFF
           </div>
 
@@ -30,16 +30,16 @@ export const OfferPricingSection = () => (
             <div className="w-px h-24 bg-white/10 hidden md:block"></div>
 
             <div className="text-center md:text-left flex items-baseline gap-2">
-              <span className="text-4xl text-[#e2b764] font-light">$</span>
-              <span className="font-editorial text-8xl md:text-9xl text-white leading-none tracking-tighter">17<span className="text-6xl text-[#e2b764]">.99</span></span>
+              <span className="text-3xl md:text-4xl text-[#e2b764] font-light">$</span>
+              <span className="font-editorial text-7xl md:text-9xl text-white leading-none tracking-tighter">17<span className="text-5xl md:text-6xl text-[#e2b764]">.99</span></span>
             </div>
           </div>
 
           <button
             onClick={openCheckoutModal}
-            className="btn-press btn-shine w-full bg-[#e2b764] text-[#04100b] py-6 md:py-8 rounded-lg font-extrabold text-2xl md:text-3xl tracking-wide flex items-center justify-center gap-4 hover:bg-[#f3c97b] shadow-[0_0_40px_rgba(226,183,100,0.4)]"
+            className="btn-press btn-shine w-full bg-[#e2b764] text-[#04100b] py-4 md:py-8 rounded-lg font-extrabold text-xl md:text-3xl tracking-wide flex items-center justify-center gap-3 hover:bg-[#f3c97b] shadow-[0_0_40px_rgba(226,183,100,0.4)] relative z-20"
           >
-            SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={32} />
+            SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={24} className="md:w-8 md:h-8" />
           </button>
 
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-white/60 font-medium">

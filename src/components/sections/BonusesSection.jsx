@@ -40,7 +40,7 @@ const bonosGratis = [
 ];
 
 export const BonusesSection = () => (
-  <section className="py-24 md:py-32 bg-[#0a2517] text-white border-t border-[#e2b764]/20 relative overflow-hidden">
+  <section id="offer" className="py-24 md:py-32 bg-[#0a2517] text-white border-t border-[#e2b764]/20 relative overflow-hidden">
     <div className="noise-bg opacity-40"></div>
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
       <ScrollReveal>

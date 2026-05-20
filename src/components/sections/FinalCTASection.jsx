@@ -18,10 +18,10 @@ export const FinalCTASection = () => (
 
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
             <ScrollReveal>
-                <h2 className="font-editorial text-5xl md:text-7xl mb-8 leading-tight drop-shadow-xl text-white">
+                <h2 className="font-editorial text-4xl md:text-7xl mb-6 md:mb-8 leading-tight drop-shadow-xl text-white">
                     Tu hígado puede recuperarse.
                 </h2>
-                <p className="text-2xl font-light text-[#e2b764] mb-10 italic drop-shadow-md">
+                <p className="text-xl md:text-2xl font-light text-[#e2b764] mb-8 md:mb-10 italic drop-shadow-md">
                     Vos tenés el poder, y ahora tenés el plan.
                 </p>
                 <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -30,9 +30,9 @@ export const FinalCTASection = () => (
 
                 <button
                     onClick={openCheckoutModal}
-                    className="btn-press btn-shine inline-flex items-center justify-center w-full md:w-3/4 mx-auto bg-[#e2b764] text-[#04100b] px-8 py-6 rounded-lg font-extrabold text-xl md:text-3xl tracking-wide shadow-[0_0_60px_rgba(226,183,100,0.5)] hover:bg-[#f3c97b]"
+                    className="btn-press btn-shine inline-flex items-center justify-center w-full md:w-3/4 mx-auto bg-[#e2b764] text-[#04100b] px-6 py-4 md:px-8 md:py-6 rounded-lg font-extrabold text-lg md:text-3xl tracking-wide shadow-[0_0_60px_rgba(226,183,100,0.5)] hover:bg-[#f3c97b] relative z-20"
                 >
-                    SÍ, QUIERO SANAR MI HÍGADO AHORA <ArrowRight size={28} className="ml-3" />
+                    SÍ, QUIERO SANAR MI HÍGADO AHORA <ArrowRight size={24} className="ml-2 md:ml-3 md:w-7 md:h-7" />
                 </button>
 
                 <p className="mt-8 text-sm text-white/60 tracking-widest uppercase font-bold">

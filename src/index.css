@@ -93,6 +93,8 @@ body {
 .btn-press {
   cursor: pointer;
   user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: transform 120ms ease, filter 120ms ease;
 }
 .btn-press:active {

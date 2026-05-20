@@ -6,14 +6,14 @@ export const HeroSection = () => (
     <section className="relative flex flex-col justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0f3b23] via-[#061a11] to-[#04100b] pt-6 pb-12 sm:pt-10 sm:pb-20">
         <div className="noise-bg"></div>
 
-        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-[#1a5c36] rounded-full mix-blend-screen filter blur-[100px] orb-1 opacity-60"></div>
-        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-[#0c2e1b] rounded-full mix-blend-screen filter blur-[120px] orb-2 opacity-80"></div>
-        <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] bg-[#e2b764] rounded-full mix-blend-overlay filter blur-[150px] orb-3 opacity-30"></div>
+        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-[#1a5c36] rounded-full mix-blend-screen filter blur-[100px] orb-1 opacity-60 pointer-events-none"></div>
+        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-[#0c2e1b] rounded-full mix-blend-screen filter blur-[120px] orb-2 opacity-80 pointer-events-none"></div>
+        <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] bg-[#e2b764] rounded-full mix-blend-overlay filter blur-[150px] orb-3 opacity-30 pointer-events-none"></div>
 
         <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
 
             <ScrollReveal delay={200}>
-                <h1 className="font-editorial text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-white mb-6 drop-shadow-2xl">
+                <h1 className="font-editorial text-4xl md:text-6xl lg:text-8xl leading-[1.05] text-white mb-4 md:mb-6 drop-shadow-2xl">
                     Recetas Deliciosas <br />
                     <span className="italic text-[#e2b764]">para Sanar el</span> <br />
                     Hígado Graso
@@ -21,7 +21,7 @@ export const HeroSection = () => (
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-                <p className="text-lg md:text-2xl font-light text-white/80 max-w-3xl mx-auto leading-relaxed mb-10 drop-shadow-md">
+                <p className="text-base md:text-2xl font-light text-white/80 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-10 drop-shadow-md">
                     Comé rico, recuperá tu energía y cuidá tu hígado de verdad.
                     Sin dietas insípidas, sin sacrificios imposibles, sin que el resto de la familia se queje.
                 </p>
@@ -41,7 +41,7 @@ export const HeroSection = () => (
             </ScrollReveal>
 
             <ScrollReveal delay={400} className="w-full flex flex-col items-center">
-                <button onClick={scrollToOffer} className="btn-shine bg-[#e2b764] text-[#04100b] px-8 py-5 md:px-12 md:py-6 rounded-none font-bold text-xl md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer">
+                <button onClick={scrollToOffer} className="btn-press btn-shine bg-[#e2b764] text-[#04100b] px-6 py-4 md:px-12 md:py-6 rounded-none font-bold text-lg md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer relative z-20">
                     Quiero mis Recetas <ArrowRight size={24} />
                 </button>
 

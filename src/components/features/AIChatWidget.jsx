@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 
 export const AIChatWidget = ({ isChatOpen, setIsChatOpen, chatMessages, chatInput, setChatInput, isChatLoading, chatEndRef, handleSendChat }) => (
-  <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+  <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
     <div
       className={`bg-[#04100b] border border-[#e2b764]/30 rounded-2xl shadow-2xl mb-4 w-[90vw] sm:w-[360px] overflow-hidden transition-all duration-300 origin-bottom-right ${
         isChatOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-0 opacity-0 pointer-events-none'
@@ -70,7 +70,7 @@ export const AIChatWidget = ({ isChatOpen, setIsChatOpen, chatMessages, chatInpu
 
     <button
       onClick={() => setIsChatOpen(!isChatOpen)}
-      className="w-16 h-16 bg-[#e2b764] text-[#04100b] rounded-full shadow-[0_0_20px_rgba(226,183,100,0.5)] flex items-center justify-center hover:scale-105 transition-transform btn-shine relative"
+      className="w-16 h-16 bg-[#e2b764] text-[#04100b] rounded-full shadow-[0_0_20px_rgba(226,183,100,0.5)] flex items-center justify-center hover:scale-105 transition-transform btn-shine relative pointer-events-auto"
     >
       {isChatOpen ? <X size={28} /> : <MessageCircle size={28} />}
       {!isChatOpen && (

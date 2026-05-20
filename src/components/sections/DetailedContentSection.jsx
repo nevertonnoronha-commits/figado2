@@ -32,6 +32,7 @@ export const DetailedContentSection = () => (
               </div>
             </div>
             <div className="md:w-3/4 pt-1 md:pt-4">
+              <span className="md:hidden text-[#e2b764] tracking-widest text-xs uppercase font-bold mb-1 block">{item.time}</span>
               <h3 className="font-editorial text-2xl md:text-3xl text-[#0a2517] mb-3">{item.title}</h3>
               <p className="text-[#04100b]/70 font-light text-lg leading-relaxed">{item.desc}</p>
             </div>

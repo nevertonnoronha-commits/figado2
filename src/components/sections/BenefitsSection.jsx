@@ -1,6 +1,7 @@
 import React from 'react';
-import { Zap, Scale, Activity, Smile } from 'lucide-react';
+import { Zap, Scale, Activity, Smile, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const BenefitsSection = () => (
   <section className="py-24 md:py-32 bg-[#04100b] border-y border-[#e2b764]/20 relative overflow-hidden">
@@ -8,7 +9,7 @@ export const BenefitsSection = () => (
 
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
       <ScrollReveal>
-        <h2 className="font-editorial text-5xl md:text-6xl text-white mb-16 text-center leading-tight">
+        <h2 className="font-editorial text-4xl md:text-6xl text-white mb-10 md:mb-16 text-center leading-tight">
           ¿Qué cambia en tu vida <br />
           <span className="text-[#e2b764] italic">cuando comés bien?</span>
         </h2>
@@ -51,6 +52,15 @@ export const BenefitsSection = () => (
           </ScrollReveal>
         </div>
       </div>
+      
+      <ScrollReveal delay={400} className="mt-12 md:mt-20 flex justify-center">
+        <button
+          onClick={scrollToOffer}
+          className="btn-press btn-shine bg-[#e2b764] text-[#04100b] px-6 py-4 md:px-12 md:py-6 rounded-lg font-extrabold text-lg md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer"
+        >
+          QUIERO EMPEZAR HOY MISMO <ArrowRight size={24} className="md:w-7 md:h-7" />
+        </button>
+      </ScrollReveal>
     </div>
   </section>
 );
