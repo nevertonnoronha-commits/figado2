@@ -2,39 +2,70 @@ import React from 'react';
 import { Sunrise, Utensils, Nut, Moon } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
+const phases = [
+  {
+    n: 'FASE 1',
+    icon: Sunrise,
+    title: 'Desayunos de Activación',
+    sub: 'Cortan la inflamación de raíz sin picos de insulina',
+    desc: 'La combinación exacta de 3 alimentos comunes que obliga a tu hígado a salir del modo "almacenamiento" y entrar en modo "quema de grasa" antes de las 10 AM. Olvidate del sueño a media mañana y los picos de azúcar que te tiran abajo.',
+  },
+  {
+    n: 'FASE 2',
+    icon: Utensils,
+    title: 'Almuerzos Terapéuticos',
+    sub: 'Listos en 20 min — diseñados para trabajar mientras vos trabajás',
+    desc: 'Platos principales tan sabrosos que tu familia pedirá repetir. Científicamente formulados para mantener el filtro hepático activo sin ingredientes exóticos ni presupuesto extra. Nada de comida "de hospital".',
+  },
+  {
+    n: 'FASE 3',
+    icon: Nut,
+    title: 'El "Engaño" del Snack',
+    sub: 'Cero ansiedad. Cero costo metabólico para el hígado',
+    desc: 'El problema de las dietas no es la comida principal — es el hambre desesperada a las 5 PM. Acá descubrís los snacks que engañan a tu cerebro saciando la ansiedad, pero con costo metabólico prácticamente nulo para tu hígado.',
+  },
+  {
+    n: 'FASE 4',
+    icon: Moon,
+    title: 'Cenas de Reparación Nocturna',
+    sub: 'Desinflaman mientras dormís — te levantás sin pesadez',
+    desc: 'Preparaciones específicas que no cargan tu sistema digestivo. Desinflaman tus órganos internos mientras dormís, garantizando que te levantés liviano y con energía real al día siguiente. Adiós a la pesadez matutina.',
+  },
+];
+
 export const DetailedContentSection = () => (
-  <section className="py-24 bg-[#fcfbf9] text-[#04100b] overflow-hidden">
-    <div className="container mx-auto px-6 max-w-4xl">
+  <section className="py-16 md:py-24 bg-white border-b-4 border-[#111111]">
+    <div className="container mx-auto px-5 max-w-3xl">
+
       <ScrollReveal>
-        <div className="text-center mb-20">
-          <span className="text-[#e2b764] tracking-widest uppercase text-sm font-bold mb-4 block">Dentro de la guía</span>
-          <h2 className="font-editorial text-4xl md:text-5xl text-[#0a2517]">Recetas para cada momento del día</h2>
-        </div>
+        <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
+          ◆ PRESENTAMOS EL SISTEMA NATURALE
+        </span>
+        <h2 className="font-editorial text-3xl md:text-5xl font-bold text-[#111111] leading-tight mb-4">
+          El Protocolo Clínico de Regeneración Hepática en Casa
+        </h2>
+        <p className="text-base md:text-lg text-[#525252] font-light leading-relaxed mb-12 border-l-4 border-[#111111] pl-4">
+          No es un PDF de recetas lindas. Es un mapa de farmacología aplicada a través de tu comida diaria, dividido en 4 fases estratégicas.
+        </p>
       </ScrollReveal>
 
-      <div className="space-y-12 md:space-y-16 border-l border-[#0a2517]/10 pl-8 ml-4 md:ml-0 md:border-none md:pl-0">
-        {[
-          { icon: Sunrise, time: 'MAÑANA', title: 'Desayunos que activan, no que hunden', desc: 'Empezá el día con preparaciones que activan el metabolismo hepático, cortan la inflamación de raíz y te dan energía real. Sin picos de azúcar que te tiran abajo a las 10 AM.' },
-          { icon: Utensils, time: 'MEDIODÍA', title: 'Almuerzos completos que no parecen de dieta', desc: 'Platos principales sabrosos, nutritivos y rápidos. Los preparás en 20 minutos, los come toda la familia con gusto y nadie se da cuenta de que son terapéuticos.' },
-          { icon: Nut, time: 'TARDE', title: 'Snacks que matan el hambre', desc: 'El problema con las dietas no es la comida principal, es el hambre entre comidas. Acá tenés opciones concretas para cortar la ansiedad sin procesados y sin culpa.' },
-          { icon: Moon, time: 'NOCHE', title: 'Cenas livianas para dormir bien', desc: 'Preparaciones rápidas que no cargan el hígado cuando más descansa. Mejoran la digestión nocturna, reducen la inflamación y te ayudan a levantarte sin esa pesadez.' }
-        ].map((item, idx) => (
-          <ScrollReveal key={idx} delay={200} className="relative md:flex items-start gap-12 group">
-            <div className="absolute -left-[49px] top-0 bg-[#fcfbf9] p-2 md:relative md:left-0 md:p-0 md:w-1/4 md:text-right">
-              <div className="md:hidden w-8 h-8 rounded-full bg-[#0a2517] flex items-center justify-center text-[#e2b764] shadow-md">
-                <item.icon size={14} />
-              </div>
-              <div className="hidden md:flex flex-col items-end">
-                <span className="text-[#e2b764] tracking-widest text-xs uppercase font-bold mb-2">{item.time}</span>
-                <div className="w-16 h-16 rounded-full bg-[#0a2517] flex items-center justify-center text-[#e2b764] group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <item.icon size={24} strokeWidth={1.5} />
+      <div className="space-y-5">
+        {phases.map((phase, i) => (
+          <ScrollReveal key={i} delay={i * 100}>
+            <div className="border-2 border-[#111111] bg-white shadow-[4px_4px_0_#111111] overflow-hidden">
+              <div className="bg-[#111111] text-white px-5 py-3 flex items-center gap-3">
+                <phase.icon size={18} className="shrink-0 text-[#FBBF24]" />
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#FBBF24] block leading-none mb-0.5">
+                    {phase.n}
+                  </span>
+                  <p className="font-bold text-white text-sm md:text-base leading-tight">{phase.title}</p>
                 </div>
               </div>
-            </div>
-            <div className="md:w-3/4 pt-1 md:pt-4">
-              <span className="md:hidden text-[#e2b764] tracking-widest text-xs uppercase font-bold mb-1 block">{item.time}</span>
-              <h3 className="font-editorial text-2xl md:text-3xl text-[#0a2517] mb-3">{item.title}</h3>
-              <p className="text-[#04100b]/70 font-light text-lg leading-relaxed">{item.desc}</p>
+              <div className="px-5 py-4">
+                <p className="text-xs font-black uppercase tracking-wider text-[#B91C1C] mb-2">{phase.sub}</p>
+                <p className="text-sm md:text-base text-[#333333] font-light leading-relaxed">{phase.desc}</p>
+              </div>
             </div>
           </ScrollReveal>
         ))}

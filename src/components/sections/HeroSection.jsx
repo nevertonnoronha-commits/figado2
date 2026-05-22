@@ -1,79 +1,113 @@
-import { ShieldCheck, Star, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Star, ChevronDown } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const HeroSection = () => (
-    <section className="relative flex flex-col justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0f3b23] via-[#061a11] to-[#04100b] pt-6 pb-12 sm:pt-10 sm:pb-20">
-        <div className="noise-bg"></div>
+  <section className="bg-white border-b-4 border-[#111111] pt-8 pb-16 md:pt-12 md:pb-24">
+    <div className="container mx-auto px-5 max-w-4xl">
 
-        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-[#1a5c36] rounded-full mix-blend-screen filter blur-[100px] orb-1 opacity-60 pointer-events-none"></div>
-        <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-[#0c2e1b] rounded-full mix-blend-screen filter blur-[120px] orb-2 opacity-80 pointer-events-none"></div>
-        <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] bg-[#e2b764] rounded-full mix-blend-overlay filter blur-[150px] orb-3 opacity-30 pointer-events-none"></div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-
-            <ScrollReveal delay={200}>
-                <h1 className="font-editorial text-4xl md:text-6xl lg:text-8xl leading-[1.05] text-white mb-4 md:mb-6 drop-shadow-2xl">
-                    Recetas Deliciosas <br />
-                    <span className="italic text-[#e2b764]">para Sanar el</span> <br />
-                    Hígado Graso
-                </h1>
-            </ScrollReveal>
-
-            <ScrollReveal delay={300}>
-                <p className="text-base md:text-2xl font-light text-white/80 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-10 drop-shadow-md">
-                    Comé rico, recuperá tu energía y cuidá tu hígado de verdad.
-                    Sin dietas insípidas, sin sacrificios imposibles, sin que el resto de la familia se queje.
-                </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400} className="w-full flex justify-center mb-10">
-                <div className="relative group perspective-1000">
-                    <div className="absolute inset-0 bg-[#e2b764]/10 blur-3xl rounded-full"></div>
-                    <img
-                        src="https://raw.githubusercontent.com/nevertonnoronha-commits/naturale-images/main/image-15.webp"
-                        alt="Mockup Naturale Recetas para Sanar el Hígado Graso"
-                        loading="eager"
-                        fetchPriority="high"
-                        className="w-[280px] md:w-[400px] mx-auto rounded-xl relative z-10 bg-black/10 min-h-[200px] glow-pro cursor-pointer"
-                    />
-                </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400} className="w-full flex flex-col items-center">
-                <button onClick={scrollToOffer} className="btn-press btn-shine bg-[#e2b764] text-[#04100b] px-6 py-4 md:px-12 md:py-6 rounded-none font-bold text-lg md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer relative z-20">
-                    Quiero mis Recetas <ArrowRight size={24} />
-                </button>
-
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-white/80 font-medium max-w-xl mx-auto bg-black/20 backdrop-blur-md px-6 py-3.5 rounded-full border border-white/10 shadow-2xl">
-                    <div className="flex items-center gap-3">
-                        <div className="flex -space-x-2.5 overflow-hidden">
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=1" alt="Paciente verificada" loading="lazy" decoding="async" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=5" alt="Paciente verificada" loading="lazy" decoding="async" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=9" alt="Paciente verificada" loading="lazy" decoding="async" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=12" alt="Paciente verificada" loading="lazy" decoding="async" />
-                            <img className="inline-block w-7 h-7 rounded-full ring-2 ring-[#061a11] object-cover" src="https://i.pravatar.cc/100?img=32" alt="Paciente verificada" loading="lazy" decoding="async" />
-                        </div>
-                        <div className="text-left leading-tight">
-                            <div className="flex items-center gap-0.5 text-[#e2b764]">
-                                {[...Array(5)].map((_, i) => <Star key={i} size={13} fill="currentColor" />)}
-                                <span className="text-xs font-bold ml-1.5 text-white">4.9/5</span>
-                            </div>
-                            <span className="text-[11px] text-white/60 block mt-0.5">Opiniones verificadas</span>
-                        </div>
-                    </div>
-
-                    <div className="hidden sm:block w-px h-6 bg-white/10"></div>
-
-                    <div className="flex items-center gap-2 text-left">
-                        <ShieldCheck size={20} className="text-[#e2b764] shrink-0" strokeWidth={1.5} />
-                        <div className="leading-tight">
-                            <span className="text-xs text-white block"><strong>12.678 pacientes</strong> comprueban</span>
-                            <span className="text-[11px] text-[#e2b764] block mt-0.5">Garantía de 30 días</span>
-                        </div>
-                    </div>
-                </div>
-            </ScrollReveal>
+      {/* Pre-headline chip */}
+      <ScrollReveal delay={100}>
+        <div className="mb-6 md:mb-8">
+          <span className="inline-block border-2 border-[#B91C1C] text-[#B91C1C] text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] px-3 py-1.5">
+            PARA PERSONAS DE MÁS DE 40 AÑOS CON FATIGA CRÓNICA, INFLAMACIÓN ABDOMINAL O DIAGNÓSTICO DE ESTEATOSIS...
+          </span>
         </div>
-    </section>
+      </ScrollReveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+        {/* Left: copy */}
+        <div>
+          <ScrollReveal delay={150}>
+            <h1 className="font-editorial text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-[#111111] leading-[1.08] mb-5">
+              ADVERTENCIA: Tu hígado está{' '}
+              <span className="text-[#B91C1C] italic">mecánicamente asfixiado.</span>
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal delay={250}>
+            <p className="text-lg md:text-xl font-light text-[#333333] leading-relaxed mb-5">
+              Así es como podés destapar el "filtro" de tu cuerpo en{' '}
+              <strong className="font-bold text-[#111111]">28 días</strong>, sin dietas de hambre,
+              sin batidos intomables y sin pastillas inútiles.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="border-l-4 border-[#B91C1C] bg-[#FEF2F2] px-4 py-3 mb-8">
+              <p className="text-sm md:text-base text-[#111111] leading-relaxed italic">
+                Descubrí el Protocolo Clínico de <strong>Inteligencia Metabólica</strong> que obliga
+                a tu cuerpo a expulsar la grasa retenida usando combinaciones exactas de alimentos
+                de tu supermercado local.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Social proof strip */}
+          <ScrollReveal delay={350}>
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <div className="flex items-center gap-2.5">
+                <div className="flex -space-x-2 overflow-hidden">
+                  {[1, 5, 9, 12, 32].map((n) => (
+                    <img
+                      key={n}
+                      className="inline-block w-7 h-7 rounded-full ring-2 ring-white object-cover"
+                      src={`https://i.pravatar.cc/100?img=${n}`}
+                      alt="Paciente verificada"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ))}
+                </div>
+                <div className="leading-tight">
+                  <div className="flex items-center gap-0.5 text-[#B91C1C]">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} fill="currentColor" />
+                    ))}
+                    <span className="text-xs font-bold ml-1 text-[#111111]">4.9/5</span>
+                  </div>
+                  <span className="text-[10px] text-[#525252] block">+12.678 pacientes</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck size={16} className="text-[#16A34A] shrink-0" strokeWidth={2} />
+                <span className="text-xs text-[#525252]">
+                  <strong className="text-[#111111]">Garantía 30 días</strong> — Riesgo Cero
+                </span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Scroll CTA — no price here */}
+          <ScrollReveal delay={400}>
+            <button
+              onClick={scrollToOffer}
+              className="btn-press btn-shine w-full sm:w-auto bg-[#B91C1C] text-white px-8 py-4 font-black text-base uppercase tracking-widest flex items-center justify-center gap-2 border-2 border-[#7F1D1D] shadow-[4px_4px_0_#7F1D1D] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#7F1D1D] transition-all duration-100"
+            >
+              Leer el Protocolo Completo <ChevronDown size={18} />
+            </button>
+          </ScrollReveal>
+        </div>
+
+        {/* Right: product mockup */}
+        <ScrollReveal delay={200} className="flex justify-center">
+          <div className="relative">
+            <div className="absolute -top-2 -left-2 w-full h-full border-2 border-[#B91C1C] pointer-events-none z-0"></div>
+            <img
+              src="https://raw.githubusercontent.com/nevertonnoronha-commits/naturale-images/main/image-15.webp"
+              alt="Sistema NATURALE — Protocolo Clínico de Regeneración Hepática"
+              loading="eager"
+              fetchPriority="high"
+              className="w-[260px] md:w-[340px] relative z-10 glow-pro cursor-pointer min-h-[200px]"
+            />
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#111111] text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 whitespace-nowrap z-20">
+              PROTOCOLO CLÍNICO — 28 DÍAS
+            </div>
+          </div>
+        </ScrollReveal>
+
+      </div>
+    </div>
+  </section>
 );

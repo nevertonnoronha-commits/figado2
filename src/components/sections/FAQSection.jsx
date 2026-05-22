@@ -14,16 +14,17 @@ const faqs = [
 ];
 
 export const FAQSection = () => (
-  <section className="py-24 md:py-32 bg-white text-[#04100b]">
-    <div className="container mx-auto px-6 max-w-3xl">
+  <section className="py-14 md:py-20 bg-[#F7F5F0] text-[#111111] border-b-4 border-[#111111]">
+    <div className="container mx-auto px-5 max-w-3xl">
       <ScrollReveal>
-        <div className="text-center mb-16">
-          <HelpCircle size={40} className="mx-auto text-[#e2b764] mb-6" strokeWidth={1.5} />
-          <h2 className="font-editorial text-4xl md:text-5xl text-[#0a2517]">¿Tenés dudas?</h2>
-          <p className="text-[#04100b]/60 mt-4 text-lg">Acá van las respuestas más frecuentes.</p>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
+            ◆ PREGUNTAS FRECUENTES
+          </span>
+          <h2 className="font-editorial text-3xl md:text-4xl font-bold text-[#111111]">¿Tenés dudas? Acá van las respuestas.</h2>
         </div>
 
-        <div className="border-t border-[#0a2517]/10">
+        <div className="border-t-2 border-[#111111]">
           {faqs.map((faq, idx) => (
             <Accordion key={idx} question={faq.q} answer={faq.a} />
           ))}

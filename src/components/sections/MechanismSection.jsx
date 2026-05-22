@@ -1,49 +1,74 @@
 import React from 'react';
-import { Salad, Ban, Clock, CircleDollarSign, Users, BarChart3, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const MechanismSection = () => (
-  <section className="py-24 md:py-32 bg-[#04100b] text-white relative">
-    <div className="noise-bg opacity-30"></div>
-    <div className="container mx-auto px-6 max-w-6xl relative z-10">
+  <section className="py-16 md:py-24 bg-white border-b-4 border-[#111111]">
+    <div className="container mx-auto px-5 max-w-3xl">
+
       <ScrollReveal>
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="font-editorial text-4xl md:text-6xl text-white mb-4 md:mb-6">
-            Existe una solución. <br />
-            <span className="italic text-[#e2b764]">Y es más simple de lo que pensás.</span>
+        <div className="mb-10">
+          <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-2 block">
+            ◆ EL DESCUBRIMIENTO CLÍNICO
+          </span>
+          <h2 className="font-editorial text-3xl md:text-5xl font-bold text-[#111111] leading-tight mb-5">
+            Por qué las dietas fallan{' '}
+            <span className="italic text-[#B91C1C]">y la Inteligencia Metabólica funciona</span>
           </h2>
-          <p className="text-lg md:text-2xl font-light text-white/70 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-[#e2b764] font-semibold">NATURALE</strong> es una guía de alimentación terapéutica diseñada desde cero para personas que quieren comer bien, sin aburrirse y sin que parezca "comida de enfermo".
+        </div>
+      </ScrollReveal>
+
+      {/* Feature boxes: 3 facts */}
+      <ScrollReveal delay={100}>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+          {[
+            { n: '01', label: 'Recetas 24/7', desc: 'Desayuno, almuerzo, snack y cena específicos para el hígado graso.' },
+            { n: '02', label: 'Solo 20 min', desc: 'Preparaciones rápidas con ingredientes de tu supermercado local.' },
+            { n: '03', label: 'Para la familia', desc: 'No cocinás dos veces. Todos comen lo mismo sin saber que es terapéutico.' },
+          ].map((f) => (
+            <div key={f.n} className="border-2 border-[#111111] p-4 shadow-[3px_3px_0_#111111]">
+              <span className="text-xs font-black text-[#B91C1C] tracking-widest block mb-1">{f.n}</span>
+              <p className="font-bold text-[#111111] mb-1">{f.label}</p>
+              <p className="text-sm text-[#525252] font-light leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={150}>
+        <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-5 font-light">
+          <strong className="font-bold text-[#111111]">NATURALE</strong> no es un libro de recetas lindas.
+          Es un mapa de{' '}
+          <strong className="font-bold">farmacología aplicada a través de la comida diaria</strong>,
+          dividido en 4 fases estratégicas que trabajan como un protocolo de regeneración hepática.
+        </p>
+        <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-8 font-light">
+          Al combinar estratégicamente proteínas, carbohidratos y grasas específicas, creás un
+          "detergente natural" dentro de tus células hepáticas. Esto obliga a tu cuerpo a utilizar
+          la grasa acumulada en el órgano como fuente de energía.
+        </p>
+      </ScrollReveal>
+
+      <ScrollReveal delay={200}>
+        <div className="bg-[#111111] text-white p-5 md:p-6 mb-8">
+          <p className="text-base md:text-lg font-editorial italic leading-relaxed">
+            "Podés sanar comiendo platos abundantes, sabrosos y reales. Compartiendo la misma mesa
+            y la misma comida con tu familia, sin que nadie se dé cuenta de que estás siguiendo
+            un tratamiento médico."
+          </p>
+          <p className="mt-3 text-xs font-black uppercase tracking-widest text-[#FBBF24]">
+            — Dra. Elinna Novaz, Especialista en Nutrición Terapéutica Hepática
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          { icon: Salad, title: 'Recetas 24/7', desc: 'Desayuno, almuerzo, merienda y cena específicas para el hígado graso.' },
-          { icon: Ban, title: 'Guía Clara', desc: 'Alimentos prohibidos y permitidos sin tecnicismos complejos.' },
-          { icon: Clock, title: 'Menos de 30 min', desc: 'Preparaciones rápidas porque tu vida no gira alrededor de la cocina.' },
-          { icon: CircleDollarSign, title: 'Ingredientes Comunes', desc: 'Nada exótico ni caro. Solo ingredientes de tu supermercado local.' },
-          { icon: Users, title: 'Para la Familia', desc: 'No cocinás dos veces. Todos disfrutan la misma comida sana.' },
-          { icon: BarChart3, title: 'Info Nutricional', desc: 'Datos claros para que entiendas por qué cada receta te hace bien.' }
-        ].map((item, idx) => (
-          <ScrollReveal key={idx} delay={idx * 100}>
-            <div className="group bg-white/5 border border-white/10 p-8 hover:bg-white/10 hover:border-[#e2b764]/50 transition-all duration-300 h-full backdrop-blur-sm">
-              <item.icon size={32} className="text-[#e2b764] mb-6 transform group-hover:-translate-y-2 transition-transform duration-300" />
-              <h3 className="font-editorial text-2xl text-white mb-3">{item.title}</h3>
-              <p className="text-white/60 font-light leading-relaxed">{item.desc}</p>
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
-      
-      <ScrollReveal delay={200} className="mt-12 md:mt-20 flex justify-center">
+      <ScrollReveal delay={250}>
         <button
           onClick={scrollToOffer}
-          className="btn-press btn-shine bg-[#e2b764] text-[#04100b] px-6 py-4 md:px-12 md:py-6 rounded-lg font-extrabold text-lg md:text-2xl tracking-wide flex items-center justify-center gap-3 w-full md:w-auto shadow-[0_0_30px_rgba(226,183,100,0.3)] transition-all hover:bg-[#f3c97b] cursor-pointer"
+          className="btn-press btn-shine w-full sm:w-auto bg-[#16A34A] text-white px-8 py-4 font-black text-base uppercase tracking-widest flex items-center justify-center gap-2 border-2 border-[#166534] shadow-[4px_4px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#166534] transition-all duration-100"
         >
-          SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={24} className="md:w-7 md:h-7" />
+          SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={18} />
         </button>
       </ScrollReveal>
     </div>

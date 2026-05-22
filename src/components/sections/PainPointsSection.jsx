@@ -1,46 +1,117 @@
 import React from 'react';
-import { Frown, Utensils, Smartphone, ZapOff, Activity, ShieldAlert } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const PainPointsSection = () => (
-  <section className="py-24 md:py-32 bg-[#fcfbf9] text-[#04100b] relative">
-    <div className="container mx-auto px-6 max-w-6xl">
+  <section className="bg-[#F7F5F0] py-16 md:py-24 border-b-4 border-[#111111]">
+    <div className="container mx-auto px-5 max-w-3xl">
+
+      {/* Letter opening */}
       <ScrollReveal>
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="font-editorial text-5xl md:text-6xl text-[#0a2517] mb-6">¿Te suena <span className="italic text-[#e2b764]">alguna de estas?</span></h2>
-          <p className="text-xl md:text-2xl font-light text-[#04100b]/70 max-w-2xl mx-auto">
-            Porque si tenés hígado graso, seguro pasaste por más de una.
+        <p className="text-lg md:text-xl text-[#111111] leading-[1.8] mb-6 font-light">
+          Si te despertás agotado aunque duermas 8 horas, sentís el abdomen pesado después de cada
+          comida, o vivís con esa "neblina mental" que no te deja concentrarte...{' '}
+          <strong className="font-bold">necesito que leas esta página con extrema atención.</strong>
+        </p>
+      </ScrollReveal>
+
+      {/* Voss audit — objection pre-emption */}
+      <ScrollReveal delay={100}>
+        <div className="border-l-4 border-[#111111] bg-white px-5 py-4 mb-8 shadow-[3px_3px_0_#111111]">
+          <p className="text-base md:text-lg text-[#333333] leading-relaxed italic font-light">
+            Sé exactamente lo que estás pensando:{' '}
+            <em className="not-italic font-bold text-[#111111]">
+              "Acá viene otra dieta restrictiva más. Otro gurú que me va a decir que deje las harinas,
+              que me prohíba comer con mi familia y que me mate de hambre comiendo lechuga hervida."
+            </em>
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
-        {[
-          { icon: Frown, title: 'El diagnóstico sin plan', text: 'El médico te dijo "cambiá la alimentación"... y nada más. Sabés lo que no podés comer, pero no tenés idea de qué sí.' },
-          { icon: Utensils, title: 'Confusión en la cocina', text: 'Te quedás parado frente a la heladera sin saber qué hacer. ¿Sin harinas, frituras, azúcar? La cocina es un problema.' },
-          { icon: Smartphone, title: 'Sobrecarga de información', text: 'Buscaste en Google y quedaste más confundido. "La fruta está bien". "No, evitala". Y así, sin respuestas claras.' },
-          { icon: ZapOff, title: 'Dietas insostenibles', text: 'Probaste dietas que duraron tres días. Aburridas, sin sabor. Imposibles de sostener cuando tenés familia y una vida real.' },
-          { icon: Activity, title: 'Cansancio extremo', text: 'El cansancio y la hinchazón no dan respiro. Amanecés pesado, sin energía. Y el médico solo dice "mejorá los hábitos".' },
-          { icon: ShieldAlert, title: 'Miedo constante', text: 'Y en el fondo, el miedo no se va. ¿Y si esto avanza? ¿Cirrosis? Esa incertidumbre de fondo es agotadora.' }
-        ].map((item, idx) => (
-          <ScrollReveal key={idx} delay={idx * 100} className="group cursor-default">
-            <div className="bg-white p-8 md:p-10 border border-black/5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden h-full">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#e2b764]/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-[#e2b764]/20 transition-colors"></div>
-              <div className="w-14 h-14 bg-[#0a2517] text-[#e2b764] rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                <item.icon size={24} />
-              </div>
-              <h3 className="font-editorial text-2xl font-semibold mb-4 text-[#0a2517]">{item.title}</h3>
-              <p className="text-[#04100b]/70 font-light text-lg leading-relaxed">{item.text}</p>
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
+      <ScrollReveal delay={150}>
+        <p className="text-lg md:text-xl font-bold text-[#111111] mb-4">
+          Mirá, voy a ser directo con vos: <span className="text-[#B91C1C]">No es tu culpa.</span> Y definitivamente
+          no te estás volviendo perezoso por la edad.
+        </p>
+        <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-6 font-light">
+          Probablemente ya fuiste al médico. Te sentaste en el consultorio, asustado por tus niveles de
+          transaminasas, triglicéridos o esa ecografía que mostró "Hígado Graso Grado 2".
+          ¿Y qué te dijo el especialista?
+        </p>
+      </ScrollReveal>
 
-      <ScrollReveal delay={300} className="mt-12 text-center">
-        <div className="inline-block bg-[#0a2517] text-white px-8 py-6 rounded-2xl shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1a5c36] to-transparent opacity-50"></div>
-          <p className="font-editorial text-2xl md:text-3xl italic relative z-10">
-            Si te reconociste en más de uno, <span className="text-[#e2b764]">esto es exactamente para vos.</span>
+      <ScrollReveal delay={200}>
+        <div className="bg-[#B91C1C] text-white p-5 md:p-6 mb-8 shadow-[4px_4px_0_#7F1D1D]">
+          <p className="text-base md:text-lg font-bold italic leading-relaxed">
+            Te dio el peor — y más perezoso — consejo posible:{' '}
+            <span className="not-italic font-black text-xl">
+              "Tenés que cambiar los hábitos. Cerrá la boca y bajá de peso."
+            </span>
+          </p>
+          <p className="text-sm text-white/70 mt-2 font-light">
+            Te vas a casa con un diagnóstico, pero sin un plan.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={250}>
+        <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-6 font-light">
+          Te parás frente a la heladera con miedo a comer. ¿La fruta hace mal? ¿El yogur light sirve?
+          Buscás en Google y terminás con una sobrecarga de información contradictoria.
+        </p>
+      </ScrollReveal>
+
+      {/* The mechanism revelation */}
+      <ScrollReveal delay={300}>
+        <div className="border-2 border-[#111111] bg-white p-6 md:p-8 shadow-[5px_5px_0_#111111] mb-10">
+          <p className="text-xs font-black uppercase tracking-widest text-[#B91C1C] mb-3">
+            ⚕ LA VERDAD MÉDICA QUE LA INDUSTRIA DE LAS DIETAS TE OCULTA
+          </p>
+          <p className="text-lg md:text-xl font-bold text-[#111111] leading-relaxed mb-4">
+            Tu cansancio crónico y tu vientre inflamado son un problema de pura{' '}
+            <em className="text-[#B91C1C] not-italic">mecánica biológica.</em>
+          </p>
+          <p className="text-base text-[#333333] leading-relaxed font-light">
+            Tu hígado funciona exactamente igual que el filtro de aceite de un auto. Cuando está limpio,
+            la energía fluye y tu metabolismo quema calorías. Pero cuando ese filtro se empapa de grasa
+            silenciosa, <strong>todo tu cuerpo se asfixia.</strong>
+          </p>
+          <p className="mt-4 text-lg font-black text-[#111111] border-t-2 border-[#111111] pt-4">
+            Y te aseguro algo:{' '}
+            <span className="text-[#B91C1C]">Pasar hambre no destapa un filtro. Solo lo empeora.</span>
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* Pain grid */}
+      <ScrollReveal delay={350}>
+        <p className="text-sm font-black uppercase tracking-widest text-[#525252] mb-5">
+          ◆ ¿Te reconocés en alguno de estos síntomas?
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+          {[
+            { label: 'Diagnóstico sin plan', text: 'El médico dijo "cambiá la dieta" y nada más. Sin recetas, sin guía, solo restricciones vagas.' },
+            { label: 'Confusión total en la cocina', text: 'No sabés qué comer. ¿Sin harinas? ¿Sin azúcar? La cocina se convirtió en un problema.' },
+            { label: 'Sobrecarga de información', text: '"La fruta está bien." "No, evitala." Buscaste en Google y quedaste más confundido que antes.' },
+            { label: 'Dietas que duran 3 días', text: 'Probaste planes aburridos, sin sabor. Imposibles de mantener con familia y vida real.' },
+            { label: 'Cansancio extremo', text: 'Te levantás pesado, sin energía. El médico solo dice "mejorá los hábitos" sin explicar cómo.' },
+            { label: 'Miedo constante al futuro', text: '¿Y si avanza hacia fibrosis? ¿Hacia cirrosis? Esa incertidumbre silenciosa es agotadora.' },
+          ].map((item, i) => (
+            <div key={i} className="border border-[#D1D5DB] bg-white p-4 flex gap-3 items-start">
+              <span className="text-[#B91C1C] font-black text-lg leading-none mt-0.5 shrink-0">✕</span>
+              <div>
+                <p className="font-bold text-[#111111] text-sm mb-1">{item.label}</p>
+                <p className="text-[#525252] text-sm font-light leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={400}>
+        <div className="bg-[#111111] text-white px-6 py-5 text-center">
+          <p className="font-editorial text-xl md:text-2xl italic">
+            Si te reconociste en más de uno,{' '}
+            <span className="text-[#FBBF24]">esto es exactamente lo que necesitás leer.</span>
           </p>
         </div>
       </ScrollReveal>

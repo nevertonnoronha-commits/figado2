@@ -4,20 +4,21 @@ import { ChevronDown } from 'lucide-react';
 export const Accordion = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b border-[#04100b]/10 py-6">
+    <div className="border-b-2 border-[#111111] py-5">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between text-left focus:outline-none"
+        className="flex w-full items-center justify-between text-left focus:outline-none gap-4"
       >
-        <h4 className="font-editorial text-xl font-medium text-[#0a2517] pr-8">{question}</h4>
+        <h4 className="font-bold text-base md:text-lg text-[#111111] pr-4 leading-snug">{question}</h4>
         <ChevronDown
-          className={`text-[#e2b764] transition-transform duration-500 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+          size={18}
+          className={`text-[#B91C1C] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-[#04100b]/70 leading-relaxed font-light">{answer}</p>
+        <p className="text-[#333333] leading-relaxed font-light text-sm md:text-base">{answer}</p>
       </div>
     </div>
   );
