@@ -10,7 +10,7 @@ export const BenefitsSection = () => (
 
       <ScrollReveal>
         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-          ◆ RESULTADOS COMPROBADOS
+          RESULTADOS COMPROBADOS
         </span>
         <h2 className="font-editorial text-3xl md:text-5xl text-white font-bold mb-12 leading-tight">
           ¿Qué cambia en tu vida{' '}
@@ -21,7 +21,7 @@ export const BenefitsSection = () => (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7 space-y-4">
           {[
-            { icon: Zap, title: 'Más energía desde los primeros días', desc: 'El cansancio crónico cede rápido. No es sutil — lo notás en el día a día desde la primera semana.' },
+            { icon: Zap, title: 'Más energía desde los primeros días', desc: 'El cansancio crónico cede rápido. No es sutil · lo notás en el día a día desde la primera semana.' },
             { icon: Scale, title: 'Pérdida de peso sostenida sin hambre', desc: 'El metabolismo se activa. La grasa del hígado se convierte en energía. El peso baja y no vuelve.' },
             { icon: Activity, title: 'Mejores resultados en tus análisis', desc: 'Transaminasas más bajas. Triglicéridos normalizados. Buenas noticias en tu próxima ecografía.' },
             { icon: Smile, title: 'Sin hinchazón ni pesadez abdominal', desc: 'La inflamación responde rápido. En días ya te sentís diferente. Adiós a la pesadez post-comida.' },

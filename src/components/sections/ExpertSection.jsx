@@ -8,7 +8,7 @@ export const ExpertSection = () => (
 
       <ScrollReveal>
         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-6 block">
-          ◆ AUTORIDAD CLÍNICA
+          AUTORIDAD CLÍNICA
         </span>
       </ScrollReveal>
 
@@ -21,7 +21,7 @@ export const ExpertSection = () => (
               <div className="absolute inset-0 border-2 border-[#B91C1C] translate-x-3 translate-y-3 pointer-events-none"></div>
               <img
                 src="https://raw.githubusercontent.com/nevertonnoronha-commits/naturale-images/main/0a5cf9de-90ce-4fdf-ac99-cd2a085896a8.webp"
-                alt="Dra. Elinna Novaz — Especialista en Nutrición Terapéutica Hepática"
+                alt="Dra. Elinna Novaz · Especialista en Nutrición Terapéutica Hepática"
                 loading="lazy"
                 className="w-[200px] md:w-[240px] h-auto object-cover relative z-10 img-shadow-pro"
                 onError={(e) => { e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400' fill='%23154734'%3E%3Crect width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23ccc'%3EDra. Elinna Novaz%3C/text%3E%3C/svg%3E"; }}
@@ -43,7 +43,7 @@ export const ExpertSection = () => (
             </h2>
 
             <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-4 font-light">
-              Sus pacientes llegaban con un diagnóstico de hígado graso — y eran abandonados. El sistema
+              Sus pacientes llegaban con un diagnóstico de hígado graso · y eran abandonados. El sistema
               simplemente esperaba a que su condición empeorara hacia fibrosis o cirrosis para recién
               tomar medidas drásticas.
             </p>
@@ -76,7 +76,7 @@ export const ExpertSection = () => (
                 los que estaban inflamando su hígado en silencio."
               </p>
               <footer className="mt-3 text-xs font-black uppercase tracking-widest text-[#B91C1C]">
-                — Dra. Elinna Novaz
+                Dra. Elinna Novaz
               </footer>
             </div>
           </ScrollReveal>

@@ -9,7 +9,7 @@ export const OfferPricingSection = () => (
 
       <ScrollReveal>
         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-6 block">
-          ◆ LA MATEMÁTICA DE TU SALUD
+          LA MATEMÁTICA DE TU SALUD
         </span>
         <h2 className="font-editorial text-3xl md:text-5xl text-white font-bold leading-tight mb-10">
           El Costo Oculto de{' '}
@@ -21,7 +21,7 @@ export const OfferPricingSection = () => (
       <ScrollReveal delay={100}>
         <div className="space-y-3 mb-10">
           {[
-            { q: '¿Cuánto gastás por mes en pastillas para la digestión, Omeprazol o tés mágicos que no funcionan?', a: 'Mínimo $40 al mes — sin resultados reales.' },
+            { q: '¿Cuánto gastás por mes en pastillas para la digestión, Omeprazol o tés mágicos que no funcionan?', a: 'Mínimo $40 al mes · sin resultados reales.' },
             { q: '¿Cuánto cuesta una consulta privada con un especialista donde solo te dicen "bajá de peso"?', a: 'Arriba de $150 por 15 minutos de nada.' },
             { q: '¿Y cuál es el costo físico, emocional y financiero si dejás que ese hígado graso avance hacia una fibrosis irreversible?', a: 'Incalculable. Y ya es demasiado tarde para arrepentirse.' },
           ].map((item, i) => (
@@ -51,7 +51,7 @@ export const OfferPricingSection = () => (
 
           <div className="border-t border-white/10 pt-5 mb-5">
             <p className="text-xs font-black uppercase tracking-widest text-[#FBBF24] mb-2">
-              TU INVERSIÓN HOY — UN ÚNICO PAGO DE:
+              TU INVERSIÓN HOY · UN ÚNICO PAGO DE:
             </p>
             <div className="flex items-baseline justify-center gap-1 mb-1">
               <span className="text-3xl md:text-4xl text-[#FBBF24] font-light">$</span>
@@ -60,7 +60,7 @@ export const OfferPricingSection = () => (
               </span>
             </div>
             <span className="inline-block bg-[#16A34A] text-white text-xs font-black uppercase tracking-wider px-4 py-1.5">
-              85% OFF — ACCESO DE POR VIDA
+              85% OFF · ACCESO DE POR VIDA
             </span>
           </div>
 

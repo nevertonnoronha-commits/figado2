@@ -47,7 +47,7 @@ export const BonusesSection = () => (
       <ScrollReveal>
         <div className="mb-12">
           <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-            ◆ SOLO DISPONIBLE EN ESTA PÁGINA
+            SOLO DISPONIBLE EN ESTA PÁGINA
           </span>
           <h2 className="font-editorial text-3xl md:text-5xl text-white font-bold leading-tight mb-4">
             Lo que te llevás HOY:{' '}
@@ -69,14 +69,14 @@ export const BonusesSection = () => (
       <ScrollReveal delay={200}>
         <div className="bg-white text-[#111111] border-2 border-[#FBBF24] shadow-[6px_6px_0_#FBBF24] p-7 md:p-10 max-w-2xl mx-auto">
           <p className="text-[10px] font-black uppercase tracking-widest text-[#B91C1C] mb-5 text-center">
-            📦 RESUMEN — LO QUE RECIBÍS HOY
+            📦 RESUMEN · LO QUE RECIBÍS HOY
           </p>
 
           <ul className="space-y-3 mb-7">
             <li className="flex justify-between items-center border-b border-[#D1D5DB] pb-2.5">
               <span className="flex gap-2 items-center text-sm font-bold">
                 <CheckCircle2 size={15} className="text-[#16A34A] shrink-0" />
-                Sistema NATURALE — Protocolo Principal
+                Sistema NATURALE · Protocolo Principal
               </span>
               <span className="font-bold text-sm">$79.99</span>
             </li>
@@ -102,7 +102,7 @@ export const BonusesSection = () => (
               <span className="text-[#16A34A]">$17.99</span>
             </p>
             <span className="bg-[#16A34A] text-white font-black uppercase text-xs tracking-wider px-4 py-1.5 inline-block">
-              AHORRÁS $102.96 — 85% DE DESCUENTO
+              AHORRÁS $102.96 · 85% DE DESCUENTO
             </span>
           </div>
 

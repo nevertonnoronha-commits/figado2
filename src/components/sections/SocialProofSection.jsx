@@ -28,10 +28,10 @@ export const SocialProofSection = () => (
       <ScrollReveal>
         <div className="mb-12">
           <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-            ◆ RESULTADOS CLÍNICOS REALES
+            RESULTADOS CLÍNICOS REALES
           </span>
           <h2 className="font-editorial text-3xl md:text-5xl font-bold text-[#111111] leading-tight">
-            Casos Documentados — Pacientes Reales
+            Casos Documentados · Pacientes Reales
           </h2>
           <div className="w-16 h-1 bg-[#B91C1C] mt-4"></div>
         </div>
@@ -70,7 +70,7 @@ export const SocialProofSection = () => (
             onClick={openCheckoutModal}
             className="btn-press btn-shine inline-flex items-center justify-center bg-[#16A34A] text-white px-8 py-4 font-black text-base md:text-lg uppercase tracking-wide gap-2 border-2 border-[#166534] shadow-[4px_4px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#166534] transition-all duration-100"
           >
-            QUIERO ESTOS RESULTADOS — ACCEDER POR $17.99 <ArrowRight size={18} />
+            QUIERO ESTOS RESULTADOS · ACCEDER POR $17.99 <ArrowRight size={18} />
           </button>
         </div>
       </ScrollReveal>

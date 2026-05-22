@@ -10,8 +10,8 @@ export const StickyUrgencyBar = ({ timeLeft }) => {
         <div className="flex items-center gap-1.5 sm:gap-2 text-white justify-center min-w-0">
           <AlertTriangle size={14} className="text-[#EF4444] animate-pulse shrink-0 sm:w-4 sm:h-4" />
           <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/90 leading-tight">
-            <span className="hidden sm:inline">⚠ OFERTA LIMITADA — Solo quedan 23 accesos con 85% OFF</span>
-            <span className="sm:hidden">Solo 23 accesos — 85% OFF</span>
+            <span className="hidden sm:inline">⚠ OFERTA LIMITADA · Solo quedan 23 accesos con 85% OFF</span>
+            <span className="sm:hidden">Solo 23 accesos · 85% OFF</span>
           </span>
         </div>
         <div className="w-px h-4 bg-white/20 hidden sm:block shrink-0"></div>

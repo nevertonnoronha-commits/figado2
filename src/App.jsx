@@ -5,6 +5,7 @@ import { trackViewContent } from './utils/analytics';
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
 import { HeroSection } from './components/sections/HeroSection';
+import { MediaTrustSection } from './components/sections/MediaTrustSection';
 import { CheckoutModal } from './components/features/CheckoutModal';
 
 // Implementando Code Splitting / Lazy Loading para seções abaixo da dobra principal (Alívio de TTI)
@@ -165,6 +166,7 @@ export default function App() {
       <StickyUrgencyBar timeLeft={timeLeft} />
       <HeroSection />
       <MarqueeBanner />
+      <MediaTrustSection />
 
       {/* Componentes abaixo da dobra sob demanda (Suspense / Code Splitting) */}
       <Suspense fallback={<div className="h-10" />}>
@@ -178,6 +180,7 @@ export default function App() {
         <OfferPricingSection />
         <GuaranteeSection />
         <SocialProofSection />
+
         <AccessDeliverySection />
         <FAQSection />
         <FinalCTASection />

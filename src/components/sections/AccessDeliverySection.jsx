@@ -8,7 +8,7 @@ export const AccessDeliverySection = () => (
     <div className="container mx-auto px-5 max-w-4xl text-center">
       <ScrollReveal>
         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-          ◆ ENTREGA DIGITAL INMEDIATA
+          ENTREGA DIGITAL INMEDIATA
         </span>
         <h2 className="font-editorial text-2xl md:text-4xl font-bold text-[#111111] mb-10 leading-tight">
           Acceso inmediato. Desde cualquier dispositivo. Para siempre.

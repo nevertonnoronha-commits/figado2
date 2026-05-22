@@ -4,7 +4,7 @@ import { Accordion } from '../ui/Accordion';
 import { ScrollReveal } from '../ui/ScrollReveal';
 
 const faqs = [
-  { q: "¿Por cuánto tiempo tengo acceso?", a: "De por vida. Una sola compra, el material es tuyo para siempre — incluyendo todas las actualizaciones sin costo adicional." },
+  { q: "¿Por cuánto tiempo tengo acceso?", a: "De por vida. Una sola compra, el material es tuyo para siempre · incluyendo todas las actualizaciones sin costo adicional." },
   { q: "¿Cómo recibo el material?", a: "Apenas confirmás la compra, te llega el acceso por email en minutos. Sin instalaciones. Funciona directo desde el navegador." },
   { q: "¿Necesito saber cocinar?", a: "Para nada. Las recetas están explicadas paso a paso, con instrucciones simples y claras. Si podés hervir agua, podés hacer estas recetas." },
   { q: "¿Sirve si también tengo diabetes o colesterol alto?", a: "Sí. La guía fue pensada para personas con hígado graso que en muchos casos también tienen triglicéridos elevados, colesterol o diabetes tipo 2. La alimentación hepática beneficia todas estas condiciones." },
@@ -19,7 +19,7 @@ export const FAQSection = () => (
       <ScrollReveal>
         <div className="mb-10">
           <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-            ◆ PREGUNTAS FRECUENTES
+            PREGUNTAS FRECUENTES
           </span>
           <h2 className="font-editorial text-3xl md:text-4xl font-bold text-[#111111]">¿Tenés dudas? Acá van las respuestas.</h2>
         </div>

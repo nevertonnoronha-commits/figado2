@@ -233,7 +233,7 @@ export const CheckoutModal = () => {
             <div className="border-t-2 border-[#111111] pt-3 flex justify-between items-center">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-wider text-[#111111]">TOTAL HOY</p>
-                <p className="text-[10px] text-[#16A34A] font-bold">Pago único — acceso de por vida</p>
+                <p className="text-[10px] text-[#16A34A] font-bold">Pago único · acceso de por vida</p>
               </div>
               <div className="text-right font-editorial">
                 <span className="text-2xl font-bold text-[#111111]">$</span>
@@ -284,7 +284,7 @@ export const CheckoutModal = () => {
             </div>
             <div className="grid grid-cols-2 gap-1.5 mb-3">
               {[
-                'Plataforma Hotmart — certificada',
+                'Plataforma Hotmart · certificada',
                 'SSL 256-bit en toda transacción',
                 'Garantía incondicional 30 días',
                 'Acceso inmediato tras el pago',

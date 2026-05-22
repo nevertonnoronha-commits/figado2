@@ -4,10 +4,10 @@ import { ChevronDown } from 'lucide-react';
 export const Accordion = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b-2 border-[#111111] py-5">
+    <div className="border-b-2 border-[#111111]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between text-left focus:outline-none gap-4"
+        className="flex w-full items-center justify-between text-left focus:outline-none gap-4 py-4 min-h-[44px]"
       >
         <h4 className="font-bold text-base md:text-lg text-[#111111] pr-4 leading-snug">{question}</h4>
         <ChevronDown

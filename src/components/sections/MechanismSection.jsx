@@ -1,7 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
-import { scrollToOffer } from '../../utils/smoothScroll';
 
 export const MechanismSection = () => (
   <section className="py-16 md:py-24 bg-white border-b-4 border-[#111111]">
@@ -10,7 +8,7 @@ export const MechanismSection = () => (
       <ScrollReveal>
         <div className="mb-10">
           <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-2 block">
-            ◆ EL DESCUBRIMIENTO CLÍNICO
+            EL DESCUBRIMIENTO CLÍNICO
           </span>
           <h2 className="font-editorial text-3xl md:text-5xl font-bold text-[#111111] leading-tight mb-5">
             Por qué las dietas fallan{' '}
@@ -58,19 +56,11 @@ export const MechanismSection = () => (
             un tratamiento médico."
           </p>
           <p className="mt-3 text-xs font-black uppercase tracking-widest text-[#FBBF24]">
-            — Dra. Elinna Novaz, Especialista en Nutrición Terapéutica Hepática
+            · Dra. Elinna Novaz, Especialista en Nutrición Terapéutica Hepática
           </p>
         </div>
       </ScrollReveal>
 
-      <ScrollReveal delay={250}>
-        <button
-          onClick={scrollToOffer}
-          className="btn-press btn-shine w-full sm:w-auto bg-[#16A34A] text-white px-8 py-4 font-black text-base uppercase tracking-widest flex items-center justify-center gap-2 border-2 border-[#166534] shadow-[4px_4px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#166534] transition-all duration-100"
-        >
-          SÍ, QUIERO SANAR MI HÍGADO <ArrowRight size={18} />
-        </button>
-      </ScrollReveal>
     </div>
   </section>
 );

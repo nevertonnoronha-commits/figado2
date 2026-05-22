@@ -14,7 +14,7 @@ const phases = [
     n: 'FASE 2',
     icon: Utensils,
     title: 'Almuerzos Terapéuticos',
-    sub: 'Listos en 20 min — diseñados para trabajar mientras vos trabajás',
+    sub: 'Listos en 20 min · diseñados para trabajar mientras vos trabajás',
     desc: 'Platos principales tan sabrosos que tu familia pedirá repetir. Científicamente formulados para mantener el filtro hepático activo sin ingredientes exóticos ni presupuesto extra. Nada de comida "de hospital".',
   },
   {
@@ -22,13 +22,13 @@ const phases = [
     icon: Nut,
     title: 'El "Engaño" del Snack',
     sub: 'Cero ansiedad. Cero costo metabólico para el hígado',
-    desc: 'El problema de las dietas no es la comida principal — es el hambre desesperada a las 5 PM. Acá descubrís los snacks que engañan a tu cerebro saciando la ansiedad, pero con costo metabólico prácticamente nulo para tu hígado.',
+    desc: 'El problema de las dietas no es la comida principal · es el hambre desesperada a las 5 PM. Acá descubrís los snacks que engañan a tu cerebro saciando la ansiedad, pero con costo metabólico prácticamente nulo para tu hígado.',
   },
   {
     n: 'FASE 4',
     icon: Moon,
     title: 'Cenas de Reparación Nocturna',
-    sub: 'Desinflaman mientras dormís — te levantás sin pesadez',
+    sub: 'Desinflaman mientras dormís · te levantás sin pesadez',
     desc: 'Preparaciones específicas que no cargan tu sistema digestivo. Desinflaman tus órganos internos mientras dormís, garantizando que te levantés liviano y con energía real al día siguiente. Adiós a la pesadez matutina.',
   },
 ];
@@ -39,7 +39,7 @@ export const DetailedContentSection = () => (
 
       <ScrollReveal>
         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#B91C1C] mb-3 block">
-          ◆ PRESENTAMOS EL SISTEMA NATURALE
+          PRESENTAMOS EL SISTEMA NATURALE
         </span>
         <h2 className="font-editorial text-3xl md:text-5xl font-bold text-[#111111] leading-tight mb-4">
           El Protocolo Clínico de Regeneración Hepática en Casa

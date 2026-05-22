@@ -14,7 +14,7 @@ export const PainPointsSection = () => (
         </p>
       </ScrollReveal>
 
-      {/* Voss audit — objection pre-emption */}
+      {/* Voss audit · objection pre-emption */}
       <ScrollReveal delay={100}>
         <div className="border-l-4 border-[#111111] bg-white px-5 py-4 mb-8 shadow-[3px_3px_0_#111111]">
           <p className="text-base md:text-lg text-[#333333] leading-relaxed italic font-light">
@@ -42,7 +42,7 @@ export const PainPointsSection = () => (
       <ScrollReveal delay={200}>
         <div className="bg-[#B91C1C] text-white p-5 md:p-6 mb-8 shadow-[4px_4px_0_#7F1D1D]">
           <p className="text-base md:text-lg font-bold italic leading-relaxed">
-            Te dio el peor — y más perezoso — consejo posible:{' '}
+            Te dio el peor · y más perezoso · consejo posible:{' '}
             <span className="not-italic font-black text-xl">
               "Tenés que cambiar los hábitos. Cerrá la boca y bajá de peso."
             </span>
@@ -85,7 +85,7 @@ export const PainPointsSection = () => (
       {/* Pain grid */}
       <ScrollReveal delay={350}>
         <p className="text-sm font-black uppercase tracking-widest text-[#525252] mb-5">
-          ◆ ¿Te reconocés en alguno de estos síntomas?
+          ¿Te reconocés en alguno de estos síntomas?
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
           {[
