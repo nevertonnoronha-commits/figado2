@@ -1,13 +1,15 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { ShieldCheck, Lock, ArrowRight, CheckCircle2, X, Tag, Clock, Users, Copy, ChevronUp, ChevronDown } from 'lucide-react';
+import { getHotmartUrl, trackGoToCheckout } from '../../utils/analytics';
 
 const HOTMART_URL = 'https://pay.hotmart.com/W105836452N?src=RodYaOoMDvTso6sTyZfNSf4gyR7let1Fd1YZ';
 
+// Mesmos outlets da EditorialCoverageSection — consistência página/modal
 const MEDIA_LOGOS = [
-  { name: 'G1',        color: '#cc0000', bg: '#fff0f0', weight: '900' },
-  { name: 'BNews',     color: '#0057a8', bg: '#f0f6ff', weight: '900' },
-  { name: 'UOL Saúde', color: '#e05c00', bg: '#fff5f0', weight: '800' },
-  { name: 'R7',        color: '#c00020', bg: '#fff0f3', weight: '900' },
+  { name: 'Infobae',      color: '#005fa3', bg: '#f0f6ff',  weight: '900' },
+  { name: 'El Universal', color: '#b00020', bg: '#fff0f2',  weight: '900' },
+  { name: 'El Comercio',  color: '#003580', bg: '#eef3ff',  weight: '900' },
+  { name: 'RPP Noticias', color: '#d62026', bg: '#fff0f1',  weight: '800' },
 ];
 
 const COUPON_CODE  = 'NATURALE85';
@@ -50,6 +52,7 @@ export const CheckoutModal = () => {
   const [couponRevealed, setCouponRevealed] = useState(false);
   const [couponOpen, setCouponOpen]        = useState(true);
   const [copied, setCopied]               = useState(false);
+  const [exitWarning, setExitWarning]     = useState(false);
   const timer                              = useMiniTimer(isOpen);
 
   const handleCopy = useCallback(() => {
@@ -59,9 +62,25 @@ export const CheckoutModal = () => {
     });
   }, []);
 
+  // Intercepta qualquer tentativa de fechar — mostra aviso primeiro
+  const requestClose = useCallback(() => {
+    setExitWarning(true);
+  }, []);
+
+  // Fecha de verdade após confirmar saída
+  const confirmClose = useCallback(() => {
+    setExitWarning(false);
+    setIsOpen(false);
+  }, []);
+
+  const stayAndBuy = useCallback(() => {
+    setExitWarning(false);
+  }, []);
+
   useEffect(() => {
     const open = () => {
       setIsOpen(true);
+      setExitWarning(false);
       setCouponRevealed(false);
       setTimeout(() => setCouponRevealed(true), 800);
     };
@@ -70,13 +89,20 @@ export const CheckoutModal = () => {
   }, []);
 
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        exitWarning ? confirmClose() : requestClose();
+      }
+    };
     if (isOpen) window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [isOpen]);
+  }, [isOpen, exitWarning, requestClose, confirmClose]);
 
   const handleCheckout = useCallback(() => {
-    window.open(HOTMART_URL, '_blank', 'noopener,noreferrer');
+    // AddToCart dispara aqui — intenção real de compra confirmada
+    trackGoToCheckout();
+    // Passa UTMs do tráfego Bidcap/Facebook para o Hotmart
+    window.open(getHotmartUrl(HOTMART_URL), '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   }, []);
 
@@ -86,7 +112,7 @@ export const CheckoutModal = () => {
     <div
       className="fixed inset-0 z-[999] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80"
       style={{ backdropFilter: 'blur(6px)' }}
-      onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
+      onClick={(e) => { if (e.target === e.currentTarget) requestClose(); }}
     >
       <div className="modal-card bg-white w-full max-w-md shadow-[8px_8px_0_#111111] border-2 border-[#111111] relative overflow-hidden max-h-[95vh] overflow-y-auto sm:max-h-none">
 
@@ -103,14 +129,64 @@ export const CheckoutModal = () => {
           </div>
         </div>
 
-        {/* Close */}
+        {/* Close — vai para requestClose, não fecha direto */}
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={requestClose}
           aria-label="Cerrar"
           className="btn-press absolute top-12 right-4 w-8 h-8 flex items-center justify-center bg-[#F7F5F0] border border-[#D1D5DB] text-[#525252] hover:bg-[#111111] hover:text-white transition-colors z-10"
         >
           <X size={15} />
         </button>
+
+        {/* ── EXIT-INTENT OVERLAY ── */}
+        {exitWarning && (
+          <div
+            className="absolute inset-0 z-50 flex items-center justify-center bg-black/70 p-5"
+            style={{ backdropFilter: 'blur(3px)' }}
+          >
+            <div className="bg-white border-2 border-[#111111] shadow-[6px_6px_0_#111111] w-full max-w-xs animate-[modal-in_250ms_cubic-bezier(0.25,1,0.5,1)_both]">
+
+              {/* Red header */}
+              <div className="bg-[#B91C1C] px-4 py-3 text-center">
+                <p className="text-white font-black text-sm uppercase tracking-widest">
+                  ⚠ ESPERA UN MOMENTO
+                </p>
+              </div>
+
+              <div className="px-5 py-6 text-center">
+                <p className="font-editorial text-xl font-bold text-[#111111] leading-tight mb-2">
+                  ¿Vas a dejar ir el{' '}
+                  <span className="text-[#B91C1C]">85% OFF?</span>
+                </p>
+                <p className="text-sm text-[#525252] font-light leading-relaxed mb-1">
+                  Si cerrás esta ventana, el cupón{' '}
+                  <strong className="font-black text-[#111111] font-mono">{COUPON_CODE}</strong>{' '}
+                  y el precio de{' '}
+                  <strong className="text-[#16A34A]">$17.99</strong> pueden no estar disponibles la próxima vez.
+                </p>
+                <p className="text-xs text-[#B91C1C] font-bold uppercase tracking-wider mb-5">
+                  El hígado no descansa — y el tiempo tampoco.
+                </p>
+
+                {/* Stay — primary action */}
+                <button
+                  onClick={stayAndBuy}
+                  className="btn-press w-full bg-[#16A34A] text-white py-3.5 font-black text-sm uppercase tracking-wide border-2 border-[#166534] shadow-[3px_3px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 mb-3"
+                >
+                  SÍ, QUIERO MI DESCUENTO
+                </button>
+
+                {/* Leave — secondary, visually subordinate */}
+                <button
+                  onClick={confirmClose}
+                  className="btn-press w-full text-[#9CA3AF] text-xs underline underline-offset-2 hover:text-[#525252] transition-colors py-1"
+                >
+                  No, prefiero pagar precio completo
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="p-5 sm:p-6">
 
@@ -263,7 +339,7 @@ export const CheckoutModal = () => {
           {/* CTA BUTTON */}
           <button
             onClick={handleCheckout}
-            className="btn-press btn-shine w-full bg-[#16A34A] text-white py-4 sm:py-5 font-black text-base sm:text-lg uppercase tracking-wide flex items-center justify-center gap-2 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 animate-[button-breathe_2s_infinite_alternate] mb-3"
+            className="btn-press btn-shine w-full bg-[#16A34A] text-white py-4 sm:py-5 font-black text-base sm:text-lg uppercase tracking-wide flex items-center justify-center gap-2 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 brutal-pulse mb-3"
           >
             <Lock size={16} strokeWidth={2.5} />
             CONFIRMAR MI ACCESO CON DESCUENTO

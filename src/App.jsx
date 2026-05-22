@@ -5,7 +5,7 @@ import { trackViewContent } from './utils/analytics';
 import { StickyUrgencyBar } from './components/sections/StickyUrgencyBar';
 import { MarqueeBanner } from './components/sections/MarqueeBanner';
 import { HeroSection } from './components/sections/HeroSection';
-import { MediaTrustSection } from './components/sections/MediaTrustSection';
+import { EditorialCoverageSection } from './components/sections/EditorialCoverageSection';
 import { CheckoutModal } from './components/features/CheckoutModal';
 
 // Implementando Code Splitting / Lazy Loading para seções abaixo da dobra principal (Alívio de TTI)
@@ -13,6 +13,7 @@ const lazyNamed = (importFunc, name) => React.lazy(() =>
   importFunc().then(module => ({ default: module[name] }))
 );
 
+const MediaTrustSection = lazyNamed(() => import('./components/sections/MediaTrustSection'), 'MediaTrustSection');
 const PainPointsSection = lazyNamed(() => import('./components/sections/PainPointsSection'), 'PainPointsSection');
 const TransformationSection = lazyNamed(() => import('./components/sections/TransformationSection'), 'TransformationSection');
 const MechanismSection = lazyNamed(() => import('./components/sections/MechanismSection'), 'MechanismSection');
@@ -166,7 +167,6 @@ export default function App() {
       <StickyUrgencyBar timeLeft={timeLeft} />
       <HeroSection />
       <MarqueeBanner />
-      <MediaTrustSection />
 
       {/* Componentes abaixo da dobra sob demanda (Suspense / Code Splitting) */}
       <Suspense fallback={<div className="h-10" />}>
@@ -174,13 +174,14 @@ export default function App() {
         <TransformationSection />
         <MechanismSection />
         <ExpertSection />
+        <MediaTrustSection />
         <BenefitsSection />
         <DetailedContentSection />
         <BonusesSection />
         <OfferPricingSection />
         <GuaranteeSection />
         <SocialProofSection />
-
+        <EditorialCoverageSection />
         <AccessDeliverySection />
         <FAQSection />
         <FinalCTASection />

@@ -43,7 +43,7 @@ export const MediaTrustSection = () => (
 
     {/* Row 1 — left to right */}
     <div className="marquee-container mb-3" aria-hidden="true">
-      <div className="marquee-content" style={{ animationDuration: '35s' }}>
+      <div className="marquee-content" style={{ animationDuration: '60s' }}>
         {[...OUTLETS, ...OUTLETS].map((o, i) => (
           <div key={i} className="flex items-center gap-1.5 mx-7 shrink-0">
             <span className="text-base leading-none">{FLAG[o.country]}</span>
@@ -62,7 +62,7 @@ export const MediaTrustSection = () => (
     <div className="marquee-container" aria-hidden="true">
       <div
         className="marquee-content"
-        style={{ animationDuration: '28s', animationDirection: 'reverse' }}
+        style={{ animationDuration: '50s', animationDirection: 'reverse' }}
       >
         {[...OUTLETS.slice(8), ...OUTLETS.slice(0, 8), ...OUTLETS.slice(8), ...OUTLETS.slice(0, 8)].map((o, i) => (
           <div key={i} className="flex items-center gap-1.5 mx-7 shrink-0">

@@ -24,7 +24,7 @@ export const HeroSection = () => (
       <ScrollReveal delay={230}>
         <p className="text-lg md:text-xl font-light text-[#333333] leading-relaxed mb-5">
           Así es como podés destapar el "filtro" de tu cuerpo en{' '}
-          <strong className="font-bold text-[#111111]">28 días</strong>, sin dietas de hambre,
+          <strong className="font-bold text-[#111111]"><span className="highlight-sweep">28 días</span></strong>, sin dietas de hambre,
           sin batidos intomables y sin pastillas inútiles.
         </p>
       </ScrollReveal>

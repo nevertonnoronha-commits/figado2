@@ -43,7 +43,7 @@ export const MechanismSection = () => (
         </p>
         <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-8 font-light">
           Al combinar estratégicamente proteínas, carbohidratos y grasas específicas, creás un
-          "detergente natural" dentro de tus células hepáticas. Esto obliga a tu cuerpo a utilizar
+          <strong>"detergente natural"</strong> dentro de tus células hepáticas. Esto obliga a tu cuerpo a utilizar
           la grasa acumulada en el órgano como fuente de energía.
         </p>
       </ScrollReveal>

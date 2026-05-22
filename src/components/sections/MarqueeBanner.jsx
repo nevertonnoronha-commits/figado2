@@ -3,7 +3,7 @@ import { HeartPulse, Stethoscope } from 'lucide-react';
 
 export const MarqueeBanner = () => (
   <div className="bg-[#B91C1C] text-white py-3 font-black uppercase tracking-[0.15em] text-xs border-y-2 border-[#7F1D1D] marquee-container relative z-20 max-w-full" style={{ overflow: 'hidden' }}>
-    <div className="marquee-content">
+    <div className="marquee-content" style={{ animationDuration: '55s' }}>
       {[...Array(10)].map((_, i) => (
         <div key={i} className="flex items-center mx-8 gap-8">
           <div className="flex items-center gap-2">

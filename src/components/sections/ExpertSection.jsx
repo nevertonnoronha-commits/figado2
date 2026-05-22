@@ -50,7 +50,7 @@ export const ExpertSection = () => (
 
             <p className="text-base md:text-lg text-[#333333] leading-relaxed mb-6 font-light">
               Tras analizar más de{' '}
-              <strong className="font-bold text-[#111111]">12.000 casos clínicos documentados</strong>,
+              <strong className="font-bold text-[#111111]"><span className="highlight-sweep">12.000 casos clínicos documentados</span></strong>,
               sistematizó el descubrimiento que se convirtió en el Sistema NATURALE:
             </p>
 

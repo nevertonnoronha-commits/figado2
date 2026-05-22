@@ -30,7 +30,7 @@ export const FinalCTASection = () => (
 
         <button
           onClick={openCheckoutModal}
-          className="btn-press btn-shine inline-flex items-center justify-center w-full md:w-auto bg-[#16A34A] text-white px-8 py-5 font-black text-lg md:text-2xl uppercase tracking-wide gap-3 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 animate-[button-breathe_2s_infinite_alternate]"
+          className="btn-press btn-shine inline-flex items-center justify-center w-full md:w-auto bg-[#16A34A] text-white px-8 py-5 font-black text-lg md:text-2xl uppercase tracking-wide gap-3 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 brutal-pulse"
         >
           SÍ, QUIERO SANAR MI HÍGADO AHORA <ArrowRight size={22} />
         </button>

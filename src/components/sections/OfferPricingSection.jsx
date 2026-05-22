@@ -66,7 +66,7 @@ export const OfferPricingSection = () => (
 
           <button
             onClick={openCheckoutModal}
-            className="btn-press btn-shine w-full bg-[#16A34A] text-white py-5 md:py-6 font-black text-xl md:text-2xl uppercase tracking-wide flex items-center justify-center gap-3 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 animate-[button-breathe_2s_infinite_alternate]"
+            className="btn-press btn-shine w-full bg-[#16A34A] text-white py-5 md:py-6 font-black text-xl md:text-2xl uppercase tracking-wide flex items-center justify-center gap-3 border-2 border-[#166534] shadow-[5px_5px_0_#166534] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_#166534] transition-all duration-100 brutal-pulse"
           >
             SÍ, QUIERO DESTAPAR MI HÍGADO HOY ($17.99)
             <ArrowRight size={22} />
